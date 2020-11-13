@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 10%}
+    
+    .thumbnail img{
+        height: 70vh;
+    }
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    .col-sm-7{
+        margin-top: -12px;
+    }
+
+    .col-sm-5{
+        margin-top: 8px;
+    }
+    .col-xs-5{
+        margin-top: 4vh;
+    }
+      
+    .col-xs-7{
+        margin-top: -3vh;
+    }
+
+    .well{
+        background: #fff;
+        color: #000;
+        border-color: #000;
+        border: 1.2px solid;
+    }
+    .thumbnail{
+        border-color: #000;
+        border: 1.2px solid;
+    }
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    .button_margin{
+        margin-bottom: 5px;
+        padding: 7px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="visible-xs">
+  <div class="container-fluid">
+    <div class="row content">
+        <div class="col-xs-5 visible-xs">
+            <div class="thumbnail w-50">
+                <img height="200px" src="https://lh3.googleusercontent.com/proxy/xDyS5aRzZuMTawXsv_Xcx9VZsrYCee2EhwJSpYK1EaEtacl-p3r5rqLMEi0_9ibTBuzGgrDgibRtltzscJ6sxWSzY0ukVDPtpSKzZ63oclGRLQit5hod8G5i9Nek_LMydZokJivL0ytyKf4">
+            </div>
+            <div class="well well-sm button_margin">
+                <h4>Copy</h4>
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-7 visible-xs">
+            <div class="well well-sm button_margin" onclick="popup()">
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#copiesModal">Copies</h4></div>
+              <h4 id="xscurcopies" data-toggle="modal" data-target="#copiesModal">10</h4>
+            </div>
+            <div  class="well well-sm button_margin">
+              <div class="col-xs-9 visible-xs"><h4 data-toggle="modal" data-target="#brightnessModal">Brightness</h4></div>
+              <h4 data-toggle="modal" data-target="#brightnessModal">Normal</h4>
+            </div>
+            <div  class="well well-sm button_margin">
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sourceModal">Source</h4></div>
+              <h4 data-toggle="modal" data-target="#sourceModal">A</h4>
+            </div>
+            <div  class="well well-sm button_margin">
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Sides</h4></div>
+              <h4 data-toggle="modal" data-target="#sidesModal">1->2</h4>
+            </div>
+            <div  class="well well-sm button_margin">
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Include Separator?</h4></div>
+              <h4 data-toggle="modal" data-target="#separatorModal">No</h4>
+            </div>
+            <div  class="well well-sm button_margin">
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Separator Source</h4></div>
+              <h4 data-toggle="modal" data-target="#separatorSourceModal">A</h4>
+            </div>
+       
+            
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid hidden-xs">
+  <div class="row content">
+    <div class="col-sm-5 hidden-xs">
+        <div class="thumbnail w-50">
+            <img height="200px" src="https://lh3.googleusercontent.com/proxy/xDyS5aRzZuMTawXsv_Xcx9VZsrYCee2EhwJSpYK1EaEtacl-p3r5rqLMEi0_9ibTBuzGgrDgibRtltzscJ6sxWSzY0ukVDPtpSKzZ63oclGRLQit5hod8G5i9Nek_LMydZokJivL0ytyKf4">
+        </div>
+        <div class="well well-sm button_margin">
+            <h4>Copy</h4>
+        </div>
+    </div>
+    <br>
+    
+    <div class="col-sm-7 hidden-xs">
+      <div class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#copiesModal">Copies</h4></div>
+        <h4 id="curcopies" data-toggle="modal" data-target="#copiesModal">10</h4>
+      </div>
+      <div  class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#brightnessModal">Brightness</h4></div>
+        <h4 data-toggle="modal" data-target="#brightnessModal">Normal</h4>
+      </div>
+      <div  class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sourceModal">Source</h4></div>
+        <h4 data-toggle="modal" data-target="#sourceModal">A</h4>
+      </div>
+      <div  class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Sides</h4></div>
+        <h4 data-toggle="modal" data-target="#sidesModal">1->2</h4>
+      </div>
+      <div  class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Include Separator?</h4></div>
+        <h4 data-toggle="modal" data-target="#separatorModal">No</h4>
+      </div>
+      <div  class="well well-sm button_margin">
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Separator Source</h4></div>
+        <h4 data-toggle="modal" data-target="#separatorSourceModal">A</h4>
+      </div>
+ 
+      
+        </div>
+      </div>
+    </div>
+<!-- Modal for Copies -->
+<div id="copiesModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Copies</h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the amount of copies:</p>
+          <input id="copiesnum" type="number">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changecopies()">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Modal for Brightness -->
+<div id="brightnessModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Brightness</h4>
+        </div>
+        <div class="modal-body">
+          <p>Adjust the Brightness:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal for Source -->
+<div id="sourceModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Copies</h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the amount of copies:</p>
+          <input type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Modal for Brightness -->
+<div id="sidesModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Brightness</h4>
+        </div>
+        <div class="modal-body">
+          <p>Adjust the Brightness:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal for Source -->
+<div id="separatorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Copies</h4>
+        </div>
+        <div class="modal-body">
+          <p>Enter the amount of copies:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Modal for Brightness -->
+<div id="separatorSourceModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Brightness</h4>
+        </div>
+        <div class="modal-body">
+          <p>Adjust the Brightness:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function changecopies(){
+        newNum = document.getElementById('copiesnum').value;
+        currentNum = document.getElementById('curcopies');
+        xsCurrentNum = document.getElementById('xscurcopies');
+        currentNum.innerHTML = newNum;
+        xsCurrentNum.innerHTML = newNum;
+    }
+</script>
+</body>
+</html>
