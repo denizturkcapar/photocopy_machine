@@ -61,7 +61,7 @@
     <div class="row content">
         <div class="col-xs-5 visible-xs">
             <div class="thumbnail w-50">
-                <img height="200px" src="https://lh3.googleusercontent.com/proxy/xDyS5aRzZuMTawXsv_Xcx9VZsrYCee2EhwJSpYK1EaEtacl-p3r5rqLMEi0_9ibTBuzGgrDgibRtltzscJ6sxWSzY0ukVDPtpSKzZ63oclGRLQit5hod8G5i9Nek_LMydZokJivL0ytyKf4">
+                <img id="preview" height="200px" src="assets/normal-donut.jpg" >
             </div>
             <div class="well well-sm button_margin">
                 <h4>Copy</h4>
@@ -71,27 +71,23 @@
         <div class="col-xs-7 visible-xs">
             <div class="well well-sm button_margin" onclick="popup()">
               <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#copiesModal">Copies</h4></div>
-              <h4 id="xscurcopies" data-toggle="modal" data-target="#copiesModal">10</h4>
+              <h4 id="xscurcopies" data-toggle="modal" data-target="#copiesModal">1</h4>
             </div>
             <div  class="well well-sm button_margin">
               <div class="col-xs-9 visible-xs"><h4 data-toggle="modal" data-target="#brightnessModal">Brightness</h4></div>
-              <h4 data-toggle="modal" data-target="#brightnessModal">Normal</h4>
+              <h4 id="xscurbrightness" data-toggle="modal" data-target="#brightnessModal">Normal</h4>
             </div>
             <div  class="well well-sm button_margin">
               <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sourceModal">Source</h4></div>
-              <h4 data-toggle="modal" data-target="#sourceModal">A</h4>
+              <h4 id="xscursource" data-toggle="modal" data-target="#sourceModal">Bin A</h4>
             </div>
             <div  class="well well-sm button_margin">
               <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Sides</h4></div>
-              <h4 data-toggle="modal" data-target="#sidesModal">1->2</h4>
+              <h4 id="xscursides" data-toggle="modal" data-target="#sidesModal">1 → 1</h4>
             </div>
             <div  class="well well-sm button_margin">
-              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Include Separator?</h4></div>
-              <h4 data-toggle="modal" data-target="#separatorModal">No</h4>
-            </div>
-            <div  class="well well-sm button_margin">
-              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#sidesModal">Separator Source</h4></div>
-              <h4 data-toggle="modal" data-target="#separatorSourceModal">A</h4>
+              <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#separatorModal">Separator</h4></div>
+              <h4 id="xscurseparator" data-toggle="modal" data-target="#separatorModal">None/--</h4>
             </div>
        
             
@@ -106,7 +102,7 @@
   <div class="row content">
     <div class="col-sm-5 hidden-xs">
         <div class="thumbnail w-50">
-            <img height="200px" src="https://lh3.googleusercontent.com/proxy/xDyS5aRzZuMTawXsv_Xcx9VZsrYCee2EhwJSpYK1EaEtacl-p3r5rqLMEi0_9ibTBuzGgrDgibRtltzscJ6sxWSzY0ukVDPtpSKzZ63oclGRLQit5hod8G5i9Nek_LMydZokJivL0ytyKf4">
+            <img id="preview" height="200px" src="assets/normal-donut.jpg">
         </div>
         <div class="well well-sm button_margin">
             <h4>Copy</h4>
@@ -117,27 +113,23 @@
     <div class="col-sm-7 hidden-xs">
       <div class="well well-sm button_margin">
         <div class="col-sm-10"><h4 data-toggle="modal" data-target="#copiesModal">Copies</h4></div>
-        <h4 id="curcopies" data-toggle="modal" data-target="#copiesModal">10</h4>
+        <h4 id="curcopies" data-toggle="modal" data-target="#copiesModal">1</h4>
       </div>
       <div  class="well well-sm button_margin">
         <div class="col-sm-10"><h4 data-toggle="modal" data-target="#brightnessModal">Brightness</h4></div>
-        <h4 data-toggle="modal" data-target="#brightnessModal">Normal</h4>
+        <h4 id="curbrightness" data-toggle="modal" data-target="#brightnessModal">Normal</h4>
       </div>
       <div  class="well well-sm button_margin">
         <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sourceModal">Source</h4></div>
-        <h4 data-toggle="modal" data-target="#sourceModal">A</h4>
+        <h4 id="cursource" data-toggle="modal" data-target="#sourceModal">Bin A</h4>
       </div>
       <div  class="well well-sm button_margin">
         <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Sides</h4></div>
-        <h4 data-toggle="modal" data-target="#sidesModal">1->2</h4>
+        <h4 id="cursides" data-toggle="modal" data-target="#sidesModal">1 → 1</h4>
       </div>
       <div  class="well well-sm button_margin">
-        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Include Separator?</h4></div>
-        <h4 data-toggle="modal" data-target="#separatorModal">No</h4>
-      </div>
-      <div  class="well well-sm button_margin">
-        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#sidesModal">Separator Source</h4></div>
-        <h4 data-toggle="modal" data-target="#separatorSourceModal">A</h4>
+        <div class="col-sm-10"><h4 data-toggle="modal" data-target="#separatorModal">Separator</h4></div>
+        <h4 id="curseparator" data-toggle="modal" data-target="#separatorModal">None/--</h4>
       </div>
  
       
@@ -176,9 +168,14 @@
         </div>
         <div class="modal-body">
           <p>Adjust the Brightness:</p>
+          <select class="browser-default custom-select" id="brightness">
+            <option value="Normal">Normal</option>
+            <option value="Brighter">Brighter</option>
+            <option value="Darker">Darker</option>
+          </select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changebrightness()">Confirm</button>
         </div>
       </div>
     </div>
@@ -192,19 +189,23 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Copies</h4>
+          <h4 class="modal-title">Source</h4>
         </div>
         <div class="modal-body">
-          <p>Enter the amount of copies:</p>
-          <input type="text">
+          <p>Choose paper source:</p>
+          <select class="browser-default custom-select" id="source">
+            <option value="Bin A">Bin A</option>
+            <option value="Bin B">Bin B</option>
+            <option value="Bin C">Bin C</option>
+          </select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changesource()">Confirm</button>
         </div>
       </div>
     </div>
 </div>
-<!-- Modal for Brightness -->
+<!-- Modal for Sides -->
 <div id="sidesModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
   
@@ -212,19 +213,25 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Brightness</h4>
+          <h4 class="modal-title">Sides</h4>
         </div>
         <div class="modal-body">
-          <p>Adjust the Brightness:</p>
+          <p>Sides options:</p>
+          <select class="browser-default custom-select" id="sides">
+            <option value="1 → 1">1 → 1</option>
+            <option value="1 → 2">1 → 2</option>
+            <option value="2 → 1">2 → 1</option>
+            <option value="2 → 2">2 → 2</option>
+          </select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changesides()">Confirm</button>
         </div>
       </div>
     </div>
 </div>
 
-<!-- Modal for Source -->
+<!-- Modal for Separator -->
 <div id="separatorModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
   
@@ -232,32 +239,19 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Copies</h4>
+          <h4 class="modal-title">Separator</h4>
         </div>
         <div class="modal-body">
-          <p>Enter the amount of copies:</p>
+          <p>Separator Options:</p>
+          <select class="browser-default custom-select" id="separator">
+            <option value="None/--">None/--</option>
+            <option value="Yes/Bin A">Yes/Bin A</option>
+            <option value="Yes/Bin B">Yes/Bin B</option>
+            <option value="Yes/Bin C">Yes/Bin C</option>
+          </select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
-        </div>
-      </div>
-    </div>
-</div>
-<!-- Modal for Brightness -->
-<div id="separatorSourceModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Brightness</h4>
-        </div>
-        <div class="modal-body">
-          <p>Adjust the Brightness:</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changeseparator()">Confirm</button>
         </div>
       </div>
     </div>
@@ -270,6 +264,48 @@
         xsCurrentNum = document.getElementById('xscurcopies');
         currentNum.innerHTML = newNum;
         xsCurrentNum.innerHTML = newNum;
+    }
+    function changebrightness(){
+        newBrightness = document.getElementById('brightness').value;
+        currentBrightness = document.getElementById('curbrightness');
+        xsCurrentBrightness = document.getElementById('xscurbrightness');
+        currentBrightness.innerHTML = newBrightness;
+        xsCurrentBrightness.innerHTML = newBrightness;
+        img = document.getElementById('preview');
+        switch(newBrightness) {
+          case "Normal": 
+            console.log("hi");
+            img.src = "assets/normal-donut.jpg";
+            break;
+          case "Brighter":
+            img.src = "assets/bright-donut.jpg";
+            break;
+          case "Darker":
+            img.src = "assets/darker-donut.jpg";
+            break;
+        }
+
+    }
+    function changesource(){
+        newSource = document.getElementById('source').value;
+        currentSource = document.getElementById('cursource');
+        xsCurrentSource = document.getElementById('xscursource');
+        currentSource.innerHTML = newSource;
+        xsCurrentSource.innerHTML = newSource;
+    }
+    function changesides(){
+        newsides = document.getElementById('sides').value;
+        currentsides = document.getElementById('cursides');
+        xsCurrentsides = document.getElementById('xscursides');
+        currentsides.innerHTML = newsides;
+        xsCurrentsides.innerHTML = newsides;
+    }
+    function changeseparator(){
+        newseparator = document.getElementById('separator').value;
+        currentseparator = document.getElementById('curseparator');
+        xsCurrentseparator = document.getElementById('xscurseparator');
+        currentseparator.innerHTML = newseparator;
+        xsCurrentseparator.innerHTML = newseparator;
     }
 </script>
 </body>
