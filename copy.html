@@ -75,7 +75,7 @@
             <div class="thumbnail w-50">
                 <img id="preview" height="200px" src="https://i.stack.imgur.com/mwFzF.png" >
                 <div id="button1">
-                  <button class="uploadimg" id="but" data-toggle="modal" data-target="#uploadModal">Upload Image</button>
+                  <button class="uploadimg" id="but" data-toggle="modal" data-target="#uploadModal">Upload Image or Place Item on Top</button>
 
                 </div>
 
@@ -124,7 +124,7 @@
             <img id="preview2" height="200px" src="https://i.stack.imgur.com/mwFzF.png">
 
             <div id="button2">
-              <button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image</button>
+              <button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image or Place Item on Top</button>
             </div>
 
         </div>
@@ -383,11 +383,11 @@
       img2 = document.getElementById('preview2');
       buttonContainer = document.getElementById('button1');
       if(buttonContainer){
-        buttonContainer.innerHTML = '<button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image</button>';
+        buttonContainer.innerHTML = '<button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image or Place Item on Top</button>';
       }
       buttonContainer2 = document.getElementById('button2');
       if(buttonContainer2){
-        buttonContainer2.innerHTML = '<button class="uploadimg" id="but2" data-toggle="modal" data-target="#uploadModal">Upload Image</button>';
+        buttonContainer2.innerHTML = '<button class="uploadimg" id="but2" data-toggle="modal" data-target="#uploadModal">Upload Image or Place Item on Top</button>';
       }
       img.setAttribute("src", "https://i.stack.imgur.com/mwFzF.png");
       img2.setAttribute("src", "https://i.stack.imgur.com/mwFzF.png");
