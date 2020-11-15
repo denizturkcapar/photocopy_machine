@@ -326,7 +326,7 @@
 <script type="text/javascript">
     function changecopies(){
         newNum = document.getElementById('copiesnum').value;
-        if(int(newNum) <= 0){
+        if(parseInt(newNum, 10) <= 0){
           alert("Please enter a number greater than 0.");
         }
         else{
