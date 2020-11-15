@@ -326,15 +326,16 @@
 <script type="text/javascript">
     function changecopies(){
         newNum = document.getElementById('copiesnum').value;
-        if(parseInt(newNum, 10) <= 0){
+        currentNum = document.getElementById('curcopies');
+        xsCurrentNum = document.getElementById('xscurcopies');
+        if(parseInt(newNum, 10) <= 0 || parseInt(currentNum, 10) <= 0 || parseInt(xsCurrenNum) <= 0){
           alert("Please enter a number greater than 0.");
         }
         else{
-          currentNum = document.getElementById('curcopies');
-          xsCurrentNum = document.getElementById('xscurcopies');
           currentNum.innerHTML = newNum;
           xsCurrentNum.innerHTML = newNum;
         }
+
 
     }
     function changebrightness(){
