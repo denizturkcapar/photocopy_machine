@@ -3,6 +3,7 @@
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
+  <meta charset = "UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,6 +45,17 @@
         border-color: #000;
         border: 1.2px solid;
     }
+    .uploadimg{
+      position: absolute;
+      margin-top: -50%;
+      margin-left: 35%;
+      margin-right: 40%;
+      width: 20%;
+      height: 20%;
+      color: black;
+      font-size: 100%;
+      background-color: white;
+    }
     /* On small screens, set height to 'auto' for the grid */
     @media screen and (max-width: 767px) {
       .row.content {height: auto;} 
@@ -61,15 +73,21 @@
     <div class="row content">
         <div class="col-xs-5 visible-xs">
             <div class="thumbnail w-50">
-                <img id="preview" height="200px" src="assets/normal-donut.jpg" >
+                <img id="preview" height="200px" src="https://i.stack.imgur.com/mwFzF.png" >
+                <div id="button1">
+                  <button class="uploadimg" id="but" data-toggle="modal" data-target="#uploadModal">Upload Image</button>
+
+                </div>
+
             </div>
             <div class="well well-sm button_margin">
-                <h4>Copy</h4>
+              <h4 data-toggle="modal" data-target="#finishModal">Copy</h4>
+
             </div>
         </div>
         <br>
         <div class="col-xs-7 visible-xs">
-            <div class="well well-sm button_margin" onclick="popup()">
+            <div class="well well-sm button_margin">
               <div class="col-xs-10 visible-xs"><h4 data-toggle="modal" data-target="#copiesModal">Copies</h4></div>
               <h4 id="xscurcopies" data-toggle="modal" data-target="#copiesModal">1</h4>
             </div>
@@ -102,10 +120,16 @@
   <div class="row content">
     <div class="col-sm-5 hidden-xs">
         <div class="thumbnail w-50">
-            <img id="preview" height="200px" src="assets/normal-donut.jpg">
+
+            <img id="preview2" height="200px" src="https://i.stack.imgur.com/mwFzF.png">
+
+            <div id="button2">
+              <button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image</button>
+            </div>
+
         </div>
         <div class="well well-sm button_margin">
-            <h4>Copy</h4>
+            <h4 data-toggle="modal" data-target="#finishModal">Copy</h4>
         </div>
     </div>
     <br>
@@ -148,7 +172,9 @@
         </div>
         <div class="modal-body">
           <p>Enter the amount of copies:</p>
-          <input id="copiesnum" type="number">
+          <form>
+          <input id="copiesnum" type="number" placeholder="1" required />
+          </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" onclick="changecopies()">Confirm</button>
@@ -257,6 +283,46 @@
     </div>
 </div>
 
+<!-- Modal for Final Copy -->
+<div id="finishModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your order has been sent to the copier. Proceed to print a new order.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="reset()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Upload Image -->
+<div id="uploadModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upload</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter the URL of an image you want to copy: <input id="imagesrc" type="text" required /></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="uploadimg()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
     function changecopies(){
         newNum = document.getElementById('copiesnum').value;
@@ -272,16 +338,21 @@
         currentBrightness.innerHTML = newBrightness;
         xsCurrentBrightness.innerHTML = newBrightness;
         img = document.getElementById('preview');
+        img2 = document.getElementById('preview2');
         switch(newBrightness) {
           case "Normal": 
-            console.log("hi");
-            img.src = "assets/normal-donut.jpg";
+            img.style.filter = "brightness(1)";
+            img2.style.filter = "brightness(1)";
+            //img.src = "assets/normal-donut.jpg";
+            //img2.src = "assets/normal-donut.jpg";
             break;
           case "Brighter":
-            img.src = "assets/bright-donut.jpg";
+          img.style.filter = "brightness(1.75)";
+          img2.style.filter = "brightness(1.75)";
             break;
           case "Darker":
-            img.src = "assets/darker-donut.jpg";
+          img.style.filter = "brightness(50%)";
+          img2.style.filter = "brightness(50%)";
             break;
         }
 
@@ -306,6 +377,35 @@
         xsCurrentseparator = document.getElementById('xscurseparator');
         currentseparator.innerHTML = newseparator;
         xsCurrentseparator.innerHTML = newseparator;
+    }
+    function reset(){
+      img = document.getElementById('preview');
+      img2 = document.getElementById('preview2');
+      buttonContainer = document.getElementById('button1');
+      if(buttonContainer){
+        buttonContainer.innerHTML = '<button class="uploadimg" id="but1" data-toggle="modal" data-target="#uploadModal">Upload Image</button>';
+      }
+      buttonContainer2 = document.getElementById('button2');
+      if(buttonContainer2){
+        buttonContainer2.innerHTML = '<button class="uploadimg" id="but2" data-toggle="modal" data-target="#uploadModal">Upload Image</button>';
+      }
+      img.setAttribute("src", "https://i.stack.imgur.com/mwFzF.png");
+      img2.setAttribute("src", "https://i.stack.imgur.com/mwFzF.png");
+    }
+    function uploadimg(){
+      img = document.getElementById('preview');
+      img2 = document.getElementById('preview2');
+      imglink = document.getElementById('imagesrc').value;
+      buttonContainer = document.getElementById('button1');
+      if(buttonContainer){
+        buttonContainer.innerHTML = "";
+      }
+      buttonContainer2 = document.getElementById('button2');
+      if(buttonContainer2){
+        buttonContainer2.innerHTML = "";
+      }
+      img.setAttribute("src", imglink);
+      img2.setAttribute("src", imglink);
     }
 </script>
 </body>
