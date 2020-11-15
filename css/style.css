@@ -65,7 +65,7 @@ body {
 	border-radius: 0px 0px 7px 7px ;
 }
 #button {
-	width: fit-content;
+	width: auto;
 	border-radius: 7px;
 	background: #000;
 	text-decoration: center;
